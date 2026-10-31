@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/pets\/pets[1:3]","start":1793404079114,"end":1793404079560,"title":"examples\/pets\/pets[1:3] 18:47:59.114-18:47:59.560 Crear nuevo perro"},{"id":2,"group":1,"content":"examples\/pets\/pets[2:19]","start":1793404079586,"end":1793404079611,"title":"examples\/pets\/pets[2:19] 18:47:59.586-18:47:59.611 Buscar perro"},{"id":3,"group":1,"content":"examples\/pets\/pets[3:26]","start":1793404079622,"end":1793404079665,"title":"examples\/pets\/pets[3:26] 18:47:59.622-18:47:59.665 Crear y Buscar perro"},{"id":4,"group":1,"content":"examples\/pets\/pets[4:45]","start":1793404079672,"end":1793404079720,"title":"examples\/pets\/pets[4:45] 18:47:59.672-18:47:59.720 Actualizar mascota"},{"id":5,"group":1,"content":"examples\/pets\/pets[5:78]","start":1793404079726,"end":1793404079783,"title":"examples\/pets\/pets[5:78] 18:47:59.726-18:47:59.783 Borrar perro"},{"id":6,"group":1,"content":"examples\/pets\/pets[6:104]","start":1793404079794,"end":1793404079825,"title":"examples\/pets\/pets[6:104] 18:47:59.794-18:47:59.825 Basic authentication"},{"id":7,"group":1,"content":"examples\/pets\/pets[7:117]","start":1793404079831,"end":1793404079847,"title":"examples\/pets\/pets[7:117] 18:47:59.831-18:47:59.847 Ingresar con token"},{"id":8,"group":1,"content":"examples\/pets\/pets[8.1:158]","start":1793404079856,"end":1793404079872,"title":"examples\/pets\/pets[8.1:158] 18:47:59.856-18:47:59.872 Outline Crear nuevo perro"},{"id":9,"group":1,"content":"examples\/pets\/pets[8.2:159]","start":1793404079881,"end":1793404079899,"title":"examples\/pets\/pets[8.2:159] 18:47:59.881-18:47:59.899 Outline Crear nuevo perro"},{"id":10,"group":1,"content":"examples\/pets\/pets[8.3:160]","start":1793404079905,"end":1793404079923,"title":"examples\/pets\/pets[8.3:160] 18:47:59.905-18:47:59.923 Outline Crear nuevo perro"},{"id":11,"group":1,"content":"examples\/pets\/pets[9.1:180]","start":1793404079930,"end":1793404079946,"title":"examples\/pets\/pets[9.1:180] 18:47:59.930-18:47:59.946 Create a new pet with long name"},{"id":12,"group":1,"content":"examples\/pets\/pets[9.2:181]","start":1793404079951,"end":1793404079966,"title":"examples\/pets\/pets[9.2:181] 18:47:59.951-18:47:59.966 Create a new pet with invalid characters"},{"id":13,"group":1,"content":"examples\/pets\/pets[10:184]","start":1793404079971,"end":1793404080002,"title":"examples\/pets\/pets[10:184] 18:47:59.971-18:48:00.002 Create a new dog reading an external file"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
